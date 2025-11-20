@@ -1,0 +1,49 @@
+[workspace]
+name = "ros-humble-odrive-can"
+channels = [
+  "https://prefix.dev/robostack-humble",
+  "https://prefix.dev/conda-forge",
+]
+platforms = [
+  "linux-64",
+  "linux-aarch64",
+]
+preview = ["pixi-build"]
+
+[dependencies]
+ros-humble-odrive-can = { path = "." }
+ros-humble-ros2run = "*"
+ros-humble-ros2launch = "*"
+ros-humble-rmw-cyclonedds-cpp = "*"
+ros-humble-rmw-fastrtps-cpp = "*"
+ros-humble-rmw-zenoh-cpp = "*"
+
+[package]
+name = "ros-humble-odrive-can"
+version = "1.0.0"
+authors = ["Elian Neppel <neppel.elian.s6@dc.tohoku.ac.jp>"]
+
+[package.build.backend]
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "https://prefix.dev/conda-forge",
+]
+name = "pixi-build-ros"
+version = "*"
+
+[package.build-dependencies]
+setuptools = "*"
+ros-humble-rmw-cyclonedds-cpp = "*"
+ros-humble-rmw-fastrtps-cpp = "*"
+ros-humble-rmw-zenoh-cpp = "*"
+patchelf = "*"
+
+[package.host-dependencies]
+setuptools = "*"
+ros-humble-rmw-cyclonedds-cpp = "*"
+ros-humble-rmw-fastrtps-cpp = "*"
+ros-humble-rmw-zenoh-cpp = "*"
+patchelf = "*"
+
+[package.build.config]
+distro = "humble"
