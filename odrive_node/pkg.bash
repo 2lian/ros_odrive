@@ -1,13 +1,13 @@
-mv -f ./pixi.toml ./pixi.toml.bak
-for arch in linux-64 linux-aarch64; do
-    for distro in jazzy humble kilted; do
+#!/bin/bash
+set -e -o pipefail
 
-        rm ./pixi.toml
-        ln -s ./pixi-$distro/pixi.toml ./pixi.toml
+for arch in "linux-64" "linux-aarch64" ; do
+for distro in humble jazzy kilted; do
+    rm ./pixi.toml
+    ln -s ./pixi-$distro.toml ./pixi.toml
 
-        pixi build \
-            --output-dir ./$arch \
-            --target-platform $arch
-    done
+    pixi build \
+        --output-dir ./$arch \
+        --target-platform $arch
 done
-mv -f ./pixi.toml.bak ./pixi.toml
+done

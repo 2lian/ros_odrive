@@ -20,7 +20,6 @@ ros-humble-rmw-zenoh-cpp = "*"
 
 [package]
 name = "ros-humble-odrive-can"
-version = "1.0.0"
 authors = ["Elian Neppel <neppel.elian.s6@dc.tohoku.ac.jp>"]
 
 [package.build.backend]
